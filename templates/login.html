@@ -1,0 +1,32 @@
+	{% extends "header.html" %}
+
+	{% block content %}
+
+	<div class="container">
+			<div class="col-md-6">
+					  <form class="form-signin" method="post">
+							<h2 class="form-signin-heading">Login</h2>
+							<label for="inputUsername" class="sr-only">Username</label>
+							<input type="text" class="form-control" placeholder="Username" name="username" value="{{username}}" required autofocus>
+							<br>
+							<label for="inputPassword" class="sr-only">Password</label>
+							<input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" value="" required>
+							<div class="checkbox">
+							  <label>
+								<input type="checkbox" value="remember-me"> Remember me
+							  </label>
+							</div>
+
+							<h4 class="text-warning">{{error}}</h4>
+							<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+					  </form>
+				  </div>
+			  <div class="col-md-6 text-center">
+			  <br><br><br>
+			  	<h1>Do not have a account?</h1>
+			  	<a href="signup">Click here to sign up!</a>
+			  </div>
+	</div>
+
+
+	{% endblock %}

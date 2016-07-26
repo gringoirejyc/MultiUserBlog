@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- <title>Ji's home</title> -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.css" />
+
+    <link type="text/css" rel="stylesheet" href="css/style2.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   
+    <div class="container-fluid">
+        <header class="row">
+        <br>
+
+        <div class="col-md-12 text-right">
+            {% if user %}
+                {{user.name}}<a href="/logout">(logout)</a>
+            {% else %}
+                <a href="/login">Login</a>
+                |
+                <a href="/signup">Register</a>
+            {% endif %}
+        </div>
+            <div class="col-sm-6 visible-sm">
+                <img class="img-responsive pull-right" src="/images/logo/J-logo.png" alt="logo">
+            </div>
+
+            <div class="col-md-6 col-lg-6 visible-md visible-lg">
+                <img class="img-responsive center-block pull-left" src="images/logo/J-logo.png" alt="logo">
+            </div>
+            
+            <div class="col-md-6 col-sm-6 text-right hidden-xs">
+                <h1>JI YICHENG</h1>
+                <h4>FULL STACK WEB DEVELOPER</h4>
+            </div>
+            
+        </header>
+        
+        <hr class="hidden-xs">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                 <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+        
+                   </button>
+                   <a class="visible-xs navbar-brand" href="#">
+                      <img alt="Brand" src="images/logo/J-logo-nav.png">
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-tabs nav-justified">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="resume.html">Resume</a></li>
+                        <li class="dropdown" role="presentation">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Project<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="https://github.com/gringoirejyc/ResponsiveBlog" target="_blank">Responsive Blog</a><li>
+                                <li><a href="https://github.com/gringoirejyc/FullStack/tree/master/vagrant/tournament" target="_blank">Tournament Result</a><li>
+                                <li><a href="https://github.com/gringoirejyc/Navigation-Drawer-with-Fragment-" target="_blank">Navigation Drawer</a><li>
+                                <li><a href="https://github.com/gringoirejyc/RecyclerViewExample" target="_blank">RecyclerView with animation</a><li>
+                            </ul>
+                        </li>
+                        <li role="presentation"><a href="https://fi.linkedin.com/in/jiyicheng" target="_blank">Contact</a></li>   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+        <!-- <div class="coming-soon">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2>Coming Soon</h2>
+                            <p>I am working very hard on the new version of my site. It will bring a lot of new features. Stay tuned!</p>
+                            <div class="timer">
+                                <div class="days-wrapper">
+                                    <span class="days"></span> <br>days
+                                </div>
+                                <div class="hours-wrapper">
+                                    <span class="hours"></span> <br>hours
+                                </div>
+                                <div class="minutes-wrapper">
+                                    <span class="minutes"></span> <br>minutes
+                                </div>
+                                <div class="seconds-wrapper">
+                                    <span class="seconds"></span> <br>seconds
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ -->
+        <!-- <nav class="hidden-xs navbar navbar-default">
+            <ul class="nav nav-tabs nav-justified">
+               <li role="presentation" class="active"><a href="#">Home</a></li>
+               <li role="presentation"><a href="resume.html">Resume</a></li>
+
+
+               <li class="dropdown" role="presentation">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Project
+                   <span class="caret"></span></a>
+                   <ul class="dropdown-menu">
+                       <li><a href="https://github.com/gringoirejyc/ResponsiveBlog" target="_blank">Responsive Blog</a><li>
+                       <li><a href="https://github.com/gringoirejyc/FullStack/tree/master/vagrant/tournament" target="_blank">Tournament Result</a></li>
+                       <li><a href="https://github.com/gringoirejyc/Navigation-Drawer-with-Fragment-" target="_blank">Navigation Drawer</a><li>
+                       <li><a href="https://github.com/gringoirejyc/RecyclerViewExample" target="_blank">RecyclerView with animation</a><li>
+                   </ul>
+               </li>
+               <li role="presentation"><a href="https://fi.linkedin.com/in/jiyicheng" target="_blank">Contact</a></li>
+
+            </ul>
+        </nav> -->
+
+
+        
+       <!--  <hr>
+
+        <main class="row">
+            <div class="col-md-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw.jpg" alt="main picture">
+                </picture>                
+            </div>
+            <div class="col-md-12">
+                <h1 class="text-info">Featured Work</h1>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw1.jpg" alt="picture1">
+                </picture>
+                <br>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw2.jpg" alt="picture1">
+                </picture>
+                <br>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw3.jpg" alt="picture1">
+                    <br>
+                </picture>
+                <br>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw4.jpg" alt="picture1">
+                    <br>
+                </picture>
+                <br>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw5.jpg" alt="picture1">
+                    <br>
+                </picture>
+                
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <picture>
+                    <img class="img-responsive" src="images/home/mw6.jpg" alt="picture1">
+                    <br>
+                </picture>            
+            </div>
+            
+        </main>
+
+        <hr>
+        <footer>
+            <h1 class="h1 small text-center text-info">Designed by Ji Yicheng</h1>
+        </footer> -->
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
+
+    <!-- Javascript -->
+        <script src="/bootstrap/js/jquery-1.11.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/bootstrap/js/jquery.backstretch.min.js"></script>
+        <script src="/bootstrap/js/jquery.countdown.min.js"></script>
+        <script src="/bootstrap/js/scripts.js"></script>
+</body>
+</html>
